@@ -4,7 +4,9 @@
 
 void binom(int a, int b, int *c)
 {
-    *c = a * a + 2 * a * b + b * b;
+    // Erste binomische Formel: (a + b)^2 = a^2 + 2ab + b^2
+
+    *c = (a * a) + (2 * a * b) + (b * b);
 }
 
 int main(){

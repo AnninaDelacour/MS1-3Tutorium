@@ -5,13 +5,16 @@ int main(){
 
     int value = 42;
     printf("Value of variable 'value': %d\n", value);
+
     printf("Memory address of variable 'value': %p\n\n", &value);
 
     int *a_pointer_to_value = &value;
     printf("Value of variable 'a_pointer_to_value': %d\n", *a_pointer_to_value);
-    printf("Memory address of variable 'a_pointer_to_value': %p\n", &a_pointer_to_value);
-    //printf("Memory address of variable 'a_pointer_to_value': %p\n", &a_pointer_to_value);
+
     printf("Memory address of 'value' which 'a_pointer_to_value' points to: %p\n", a_pointer_to_value);
+
+    printf("Memory address of variable 'a_pointer_to_value': %p\n", &a_pointer_to_value);
+
 
     return EXIT_SUCCESS;
 }

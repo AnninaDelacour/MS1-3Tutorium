@@ -5,7 +5,7 @@
 // Auslagern der Berechnungen als Funktion, um Out-Argumente verwenden zu können
 void statistics(float values[], int array_length, float* mean, float* variance) {
     // Berechnung des Mittelwerts
-    float sum_mean = 0.0;
+    float sum_mean = 0.0f;
 
     for (int i = 0; i < array_length; i++) {
         sum_mean += values[i];
@@ -13,13 +13,15 @@ void statistics(float values[], int array_length, float* mean, float* variance) 
     *mean = sum_mean / (float)array_length;
 
     // Berechnung der Varianz
-    float sum_var = 0.0;
+    float sum_var = 0.0f;
 
     for (int i = 0; i < array_length; i++) {
         sum_var = sum_var + pow((values[i] - *mean), 2);
     }
     *variance = sum_var / (float)array_length;
 }
+
+
 
 int main() {
     int array_length;

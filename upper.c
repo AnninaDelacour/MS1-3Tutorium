@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main() {
 
@@ -12,9 +13,10 @@ int main() {
     // Über fflush(stdin): https://stackoverflow.com/questions/2979209/using-fflushstdin
     fflush(stdout);
 
-    scanf("%s", word); // Da char by default auf die Adresse zeigen, benötigen wir hier kein "&"
+    scanf("%49[^\r\n]", word); // Da char by default auf die Adresse zeigen, benötigen wir hier kein "&"
 
-    for (int i = 0; word[i] != '\0'; i++) {
+    int len = strlen(word);
+    for (int i = 0; i < len; i++) {
         // Wir ziehen 32 ab, da wir im Bereich der ASCII-Zeichen nur die Großbuchstaben erhalten wollen
         // https://www.asciitable.com/
         if (word[i] >= 'a' && word[i] <= 'z') {

@@ -5,7 +5,7 @@
  Call by Value:
  Wir übergeben der Funktion add() den Wert von val3 - dh val1 bekommt beim Funktionsaufruf in der Main-Funktion
  NUR den Wert, der in val3 gespeichert ist, nicht die Adresse.
- Intern wird val1 daher mit 0.0 intialisiert - da wir in val3 in der Main den Wert 0.0 übergeben haben!
+ Intern wird val1 daher mit 0.0 initialisiert - da wir in val3 in der Main den Wert 0.0 übergeben haben!
  Es liegt also quasi der Wert doppelt vor -> einmal LOKAL in der Funktion in val1, einmal in der Main-Funktion in val3.
 
  Wichtig: In Funktionen wie zB add() returned man den Wert der Variable, nicht die Variable selber.
@@ -18,6 +18,8 @@ float add(float val1){
     return val1;
 }
 
+
+
 /*
  Call by Reference:
 
@@ -28,7 +30,7 @@ float add(float val1){
 }
 
  Die Funktion sub() gibt ohne Return Statement und als void keine Subtraktion zurück, dh selbst wenn wir sie in der Main-Funktion
- aufrufen, wird der Wert von val3 nicht geupdated.
+ aufrufen, wird der Wert von val3 nicht geupdated. Denn die Variable in der Funktion sub() liegt nur lokal vor!
  Das kann man allerdings ändern, indem man einen Pointer erstellt (siehe unten)!
 
  Durch * kommen wir an den Wert, mit dem wir subtrahieren können.
@@ -55,8 +57,8 @@ int main(){
 
 
     sub(&val3);
-    printf("%f\n\n", val3);
-
+    printf("%f\n", val3);
+//    printf("Memory address of val3: %p\n\n", &val3);
 
     return EXIT_SUCCESS;
 }
